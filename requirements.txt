@@ -1,0 +1,6 @@
+streamlit
+selenium
+vaderSentiment
+pandas
+matplotlib
+chromedriver-autoinstaller
