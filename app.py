@@ -1,3 +1,5 @@
+import os
+import subprocess
 import chromedriver_autoinstaller
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -7,6 +9,11 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
+
+# Check if Chrome is installed, if not, install it
+if not os.path.exists("/usr/bin/google-chrome"):
+    subprocess.run("wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb", shell=True)
+    subprocess.run("sudo apt-get install ./google-chrome-stable_current_amd64.deb -y", shell=True)
 
 # Automatically download and install the correct version of ChromeDriver
 chromedriver_autoinstaller.install()
